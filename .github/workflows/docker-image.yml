@@ -22,17 +22,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up JDK 8
+    - name: 设置jdk8环境
       uses: actions/setup-java@v3
       with:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: maven构建
       run: mvn -B clean package -Dmaven.test.skip=true -Dautoconfig.skip
-    - name: Build the Docker image
+    - name: 构建docker镜像
       run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}
-    - name: echo
+    - name: 输出分支信息
       run: echo $GITHUB_REF_NAME
       
     # 登录  
