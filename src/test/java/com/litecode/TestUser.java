@@ -58,6 +58,6 @@ public class TestUser {
 
         List<MeterResp> meterList = meterClient.getMeterList(meterListReq);
         log.info("=========={}",meterList);
-        System.out.println("测试部署2");
+        System.out.println("测试部署3");
     }
 }
