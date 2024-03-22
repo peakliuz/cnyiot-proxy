@@ -7,11 +7,11 @@
 
 
 ```bash
-docker run -d -p 6232:6232 -e USERNAME=xxx -e PASSWORD=123456 -e KEY=xxx peakliuz/cnyiot-proxy
+docker run -d -p 6232:6232 -e username=xxx -e password=123456 -e key=xxx peakliuz/cnyiot-proxy
 ```
-- USERNAME： 用户名(电表号)
-- USERNAME： 密码，默认123456
-- KEY：调用秘钥，通过接口调用时传入
+- username： 用户名(电表号)
+- password： 密码，默认123456
+- key：调用秘钥，通过接口调用时传入
 
 ### 强烈建议
 先登录官方提供的平台，测试账号信息，以下方式任选其一即可
