@@ -5,11 +5,5 @@ WORKDIR /myapp
 EXPOSE 6232
 COPY  target/application.jar /myapp/app.jar
 ENV JVM_OPT -Xms128m -Xmx128m
-ARG username
-ENV USERNAME=${username}
-ARG password
-ENV PASSWORD=${password}
-ARG key
-ENV KEY=${key}
-ENTRYPOINT ["java","-jar","/myapp/app.jar","-Djava.security.egd=file:/dev/./urandom ${JVM_OPT}","-Dcnyiot.username=${USERNAME}","-Dcnyiot.password=${PASSWORD}","-Dcnyiot.key=${KEY}"]
+ENTRYPOINT ["java","-jar","/myapp/app.jar","--java.security.egd=file:/dev/./urandom ${JVM_OPT}","--cnyiot.username=${USERNAME}","--cnyiot.password=${PASSWORD}","--cnyiot.key=${KEY}"]
 
